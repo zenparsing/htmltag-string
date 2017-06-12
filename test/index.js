@@ -32,3 +32,12 @@ const assert = require('assert');
     </div>
   `, '<div>\n      <p></p><p></p>\n    </div>');
 }
+
+{ // Function tags
+  function Tag(props, children) {
+    return html`<div ${ props }>${ children }</div>`;
+  }
+  assert.equal(html`
+    <${Tag} a=1 b=2 className='foo'></>
+  `, '<div a="1" b="2" class="foo"></div>');
+}

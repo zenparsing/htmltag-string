@@ -43,7 +43,13 @@ function convert(x) {
   }
 }
 
+function HtmlString(html) { this.__html = String(html); }
+HtmlString.prototype.toString = function() { return this.__html; };
+
 function htmlStringElement(tag, props, children) {
+  if (typeof tag === 'function') {
+    return new HtmlString(tag(props, children));
+  }
   var attributes = toAttributes(props);
   var pairs = Object.keys(attributes).map(function(k) {
     return esc(k) + '="' + esc(attributes[k]) + '"';
@@ -53,10 +59,7 @@ function htmlStringElement(tag, props, children) {
     open += ' ' + pairs.join(' ');
   }
   var inner = children.map(convert).join('');
-  return {
-    __html: '<' + open + '>' + inner + '</' + tag + '>',
-    toString: function() { return this.__html; }
-  };
+  return new HtmlString('<' + open + '>' + inner + '</' + tag + '>');
 }
 
 module.exports = require('../quasi-html')(htmlStringElement);
