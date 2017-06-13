@@ -41,3 +41,9 @@ const assert = require('assert');
     <${Tag} a=1 b=2 className='foo'></>
   `, '<div a="1" b="2" class="foo"></div>');
 }
+
+{ // Flag attributes
+  assert.equal(html`
+    <button disabled>X</button>
+  `, '<button disabled="disabled">X</button>');
+}

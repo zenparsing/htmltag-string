@@ -19,7 +19,8 @@ function toAttributes(props) {
   var attr = {};
   Object.keys(props).forEach(function(key) {
     var name = typeof DOM_PROPS[key] === 'string' ? DOM_PROPS[key] : key;
-    attr[name] = props[key];
+    var val = props[key];
+    attr[name] = val === true ? name : val;
   });
   return attr;
 }
