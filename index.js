@@ -1,5 +1,7 @@
 'use strict';
 
+var htmlTag = require('htmltag');
+
 var DOM_PROPS = {
   className: 'class',
   htmlFor: 'for',
@@ -47,7 +49,7 @@ function convert(x) {
 function HtmlString(html) { this.__html = String(html); }
 HtmlString.prototype.toString = function() { return this.__html; };
 
-function htmlStringElement(tag, props, children) {
+function htmlTagString(tag, props, children) {
   if (typeof tag === 'function') {
     return new HtmlString(tag(props, children));
   }
@@ -63,4 +65,4 @@ function htmlStringElement(tag, props, children) {
   return new HtmlString('<' + open + '>' + inner + '</' + tag + '>');
 }
 
-module.exports = require('../quasi-html')(htmlStringElement);
+module.exports = htmlTag(htmlTagString);

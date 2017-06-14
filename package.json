@@ -1,11 +1,11 @@
 {
-  "name": "quasi-html-string",
+  "name": "htmltag-string",
   "version": "0.1.3",
   "description": "HTML string template tag",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/zenparsing/quasi-html-string.git"
+    "url": "https://github.com/zenparsing/htmltag-string.git"
   },
   "keywords": [
     "template",
@@ -13,8 +13,8 @@
     "template string",
     "html"
   ],
-  "homepage": "https://github.com/zenparsing/quasi-html-string",
+  "homepage": "https://github.com/zenparsing/htmltag-string",
   "dependencies": {
-    "quasi-html": "^0.1.3"
+    "htmltag": "^0.1.3"
   }
 }
