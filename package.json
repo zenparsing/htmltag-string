@@ -1,6 +1,6 @@
 {
   "name": "htmltag-string",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "HTML string template tag",
   "license": "MIT",
   "repository": {
@@ -15,6 +15,6 @@
   ],
   "homepage": "https://github.com/zenparsing/htmltag-string",
   "dependencies": {
-    "htmltag": "^0.1.4"
+    "htmltag": "^0.1.5"
   }
 }
